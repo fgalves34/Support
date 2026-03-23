@@ -1,0 +1,160 @@
+PRIVACY POLICY
+CVE Tracker — by FGA Apps
+Effective Date: March 21, 2026
+Last Updated: March 23, 2026
+
+================================================================================
+
+OVERVIEW
+
+CVE Tracker is a read-only security research and monitoring tool that displays
+publicly available vulnerability data from the National Vulnerability Database
+(NVD). This Privacy Policy explains how the app handles your information.
+
+The short version: We do not collect, store, or share any personal data.
+Everything stays on your device.
+
+================================================================================
+
+1. INFORMATION WE COLLECT
+
+We do not collect any personal information. The app does not transmit any data
+about you to our servers because we do not operate any servers.
+
+The following data is stored LOCALLY on your device only:
+
+  - Bookmarks: CVE IDs you save for later review (stored in device UserDefaults)
+  - Watched Vendors: Vendor names you choose to monitor (stored in UserDefaults)
+  - Followed Products: Product watchlists you create (stored in UserDefaults)
+  - Search History: Recent search queries (stored locally on-device)
+  - CVE Cache: Vulnerability data fetched from NVD, cached locally to improve
+    performance (stored in your device's Cache directory as cve_cache.json)
+  - NVD API Key: If you provide one, it is stored securely in the iOS Keychain
+    with device-only encryption (kSecAttrAccessibleWhenUnlockedThisDeviceOnly)
+  - Notification Preferences: Timestamps used to prevent duplicate notifications
+  - App Launch Status: A flag indicating first-time app launch
+
+None of this data leaves your device or is accessible to FGA Apps.
+
+================================================================================
+
+2. THIRD-PARTY SERVICES
+
+The app fetches publicly available data from the following external sources.
+When your device connects to these services, your IP address is transmitted as
+part of the standard internet request. We have no control over how these
+third parties handle network-level data.
+
+  a) National Vulnerability Database (NVD)
+     Operator: National Institute of Standards and Technology (NIST), U.S.
+               Department of Commerce — a U.S. government agency
+     Purpose:  Fetching CVE vulnerability records
+     Endpoint: https://services.nvd.nist.gov/rest/json/cves/2.0
+     If you provide an NVD API key, it is sent as an HTTP header to NIST to
+     increase rate limits. Refer to NIST's privacy policy for details:
+     https://www.nist.gov/privacy-policy
+
+  b) Security News Feeds (RSS/Atom)
+     The app aggregates articles from the following public feeds:
+       - The Hacker News      https://feeds.feedburner.com/TheHackersNews
+       - BleepingComputer     https://www.bleepingcomputer.com/feed/
+       - Krebs on Security    https://krebsonsecurity.com/feed/
+       - Dark Reading         https://www.darkreading.com/rss.xml
+       - CISA Advisories      https://www.cisa.gov/cybersecurity-advisories/all.xml
+
+     Refer to each publisher's respective privacy policy for information on
+     how they handle server-side request logs.
+
+================================================================================
+
+3. PUSH NOTIFICATIONS
+
+Push notifications (CVE alerts and news alerts) are generated entirely on your
+device using Apple's UNUserNotificationCenter framework. The app does NOT use
+any third-party push notification services or route notification content
+through external servers.
+
+Apple's APNs infrastructure may be involved in delivering device-level
+notification permissions. Refer to Apple's Privacy Policy for details:
+https://www.apple.com/legal/privacy/
+
+You can disable notifications at any time in iOS Settings > CVE Tracker >
+Notifications.
+
+================================================================================
+
+4. BACKGROUND ACTIVITY
+
+The app uses iOS Background App Refresh to periodically check for new CVE
+alerts and security news. This background activity only performs outbound
+requests to the NVD and news feed sources listed above — no personal data
+is transmitted.
+
+Background task identifiers:
+  - com.cvetracker.app.news-refresh
+  - com.cvetracker.app.cve-alert
+
+You can disable background refresh in iOS Settings > General >
+Background App Refresh > CVE Tracker.
+
+================================================================================
+
+5. DATA SECURITY
+
+  - All app data is stored locally using Apple's built-in storage mechanisms.
+  - NVD API keys are protected by iOS Keychain encryption, accessible only
+    when the device is unlocked.
+  - All network connections enforce HTTPS (App Transport Security is enabled;
+    NSAllowsArbitraryLoads = false).
+  - No analytics SDKs, crash reporting services, advertising networks, or
+    social media integrations are included in the app.
+
+================================================================================
+
+6. DATA RETENTION AND DELETION
+
+All locally stored data (bookmarks, watchlists, cache, API key) persists on
+your device until you delete the app. Uninstalling CVE Tracker removes all
+associated app data from your device.
+
+We have no access to your data and therefore cannot delete it on your behalf.
+
+================================================================================
+
+7. CHILDREN'S PRIVACY
+
+CVE Tracker is designed for security professionals, researchers, and
+technically oriented users. The app is not directed at children under the age
+of 13 (or the applicable age of digital consent in your jurisdiction). We do
+not knowingly collect any information from children.
+
+================================================================================
+
+8. CHANGES TO THIS POLICY
+
+If we make material changes to this Privacy Policy, we will update the
+"Last Updated" date above. Continued use of the app after changes are posted
+constitutes your acceptance of the updated policy.
+
+================================================================================
+
+9. CONTACT
+
+If you have questions or concerns about this Privacy Policy, please contact:
+
+  Developer:  FGA Apps
+  App:        CVE Tracker (com.2.cvetracker.app)
+
+================================================================================
+
+SUMMARY
+
+  Data collected by FGA Apps:         NONE
+  Data sold or shared:                NONE
+  Analytics / tracking:               NONE
+  Advertising:                        NONE
+  Third-party SDKs:                   NONE
+  Data stored on device:              Bookmarks, watchlists, cache, API key
+  External network requests:          NVD (NIST) + 5 public news RSS feeds
+
+================================================================================
